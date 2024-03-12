@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+int a,b,c,d;
+
+int main()
+{
+cout <<"wprowadz pierwsza liczba  ";
+cin >> a;
+c=a;
+cout <<"wprowadz druga liczba  ";
+cin >> b;
+d=b;
+while(a != b)
+    if(a > b) a = a - b;
+    else b = b - a;
+cout <<a<<" jest najwiekszym wspolnym dzielnikiem liczb "<<c<<" oraz "<<d <<endl;
+return 0;
+}
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout <<"wprowadzpierwsza liczbe  ";
+    cin >> a;
+    c=a;
+    cout << "Wprowadz druga liczbe  ";
+    cin >> b;
+    d=b;
+while (b!=0)
+{
+reszta=a % b;
+a=b;
+b=reszta;
+}
+cout << a <<" jest najwiekszym dzielnikiem liczb "<<c<<" oraz "<<d <<endl;
+cout << c*d/a <<"jest najmniejsza wspolna wielokrotnoscia liczb "<<c<< " oraz "<<d <<endl;
+return 0;
+}
