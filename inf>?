@@ -42,3 +42,61 @@ cout << a <<" jest najwiekszym dzielnikiem liczb "<<c<<" oraz "<<d <<endl;
 cout << c*d/a <<"jest najmniejsza wspolna wielokrotnoscia liczb "<<c<< " oraz "<<d <<endl;
 return 0;
 }
+
+
+
+#include <iostream>
+using namespace std;
+unsigned NWD(unsigned a, unsigned b)
+{
+    if(b == 0) return a;
+    else return NWD (b, a % b)
+
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int NWD(int a, int b)
+{
+    int i;
+    while(b!=0)
+    {
+    i = b;
+    b = a%b;
+    a = i;
+    }
+    return a;
+}
+
+
+int NWW (int a, int b)
+{
+    return a/NWD(a,b)*b;
+}
+
+int main()
+
+    int l1, l2, m1, m2, licznik, mianownik;
+
+    cout<<"Podaj licznik pierwszego ułamka   ";
+    cin >> l1;
+    cout<<"Podaj mianownik pierwszego ułamka  ";
+    cin >> m1;
+
+    cout<<"Podaj licznik drugiego ułamka   ";
+    cin >> l2;
+    cout<<"Podaj mianownik drugiego ułamka  ";
+    cin >> m2;
+
+    mianownik = NWW(m1, m2);
+    licznik = (mianownik/m1)*l1 + (mianownik/m2)*l2;
+
+    cout<<l1<<"/"<<m1<<" + "<<l2<<" = "<<licznik<<"/"<<mianownik;
+
+return 0;
