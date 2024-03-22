@@ -62,6 +62,58 @@ unsigned NWD(unsigned a, unsigned b)
 #include <iostream>
 using namespace std;
 
+int NWD(int a, int b)        //Funkcja obliczająca NWD liczb a i b
+{
+    int i;
+    while(b!=0)
+    {
+    i = b;
+    b = a%b;
+    a = i;
+    }
+    return a;
+}
+
+
+int NWW (int a, int b)             //Funkcja obilczająca NWW liczb a i b
+{
+    return a/NWD(a,b)*b;               //wykorzystująca funkcje NWD
+}
+
+int main()
+
+    int l1, l2, m1, m2, licznik, mianownik;
+
+    cout<<"Podaj licznik pierwszego ułamka   ";
+    cin >> l1;
+    cout<<"Podaj mianownik pierwszego ułamka  ";
+    cin >> m1;
+
+    cout<<"Podaj licznik drugiego ułamka   ";
+    cin >> l2;
+    cout<<"Podaj mianownik drugiego ułamka  ";
+    cin >> m2;
+
+    mianownik = NWW(m1, m2);       //mianownik wyniku jest równy NWW mianowników 
+    licznik = (mianownik/m1)*l1 + (mianownik/m2)*l2;
+
+    cout<<l1<<"/"<<m1<<" + "<<l2<<" = "<<licznik<<"/"<<mianownik;
+
+return 0;
+
+
+
+
+
+
+
+
+
+skracanie ułamków
+
+#include <iostream>
+using namespace std;
+
 int NWD(int a, int b)
 {
     int i;
@@ -95,8 +147,19 @@ int main()
     cin >> m2;
 
     mianownik = NWW(m1, m2);
-    licznik = (mianownik/m1)*l1 + (mianownik/m2)*l2;
+    licznik = mianownik/m1*l1 + mianownik/m2*l2;
+    licznik = mianownik / NWD(i,mianowjnik)
+    mianownik = mianownik / NWD(i,mianownik)
 
     cout<<l1<<"/"<<m1<<" + "<<l2<<" = "<<licznik<<"/"<<mianownik;
 
 return 0;
+
+
+
+
+if (licznik/mianownik != 0)
+{
+    c=licznik/mianownik
+    licznik=licznik-c*mianownik;
+    cout<<l1<<"/"<<m1<<" + "<<l2<<" + 
